@@ -4,7 +4,7 @@ package br.edu.ifsul.testes;
 import br.edu.ifsul.modelo.Estado;
 import br.edu.ifsul.modelo.Grupo;
 import br.edu.ifsul.modelo.Marca;
-import br.edu.ifsul.modelo.Produto;
+import br.edu.ifsul.modelo.Filmes;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -23,7 +23,7 @@ public class TesteInserirProduto {
         EntityManagerFactory emf = 
                 Persistence.createEntityManagerFactory("TA-2015-2-6N1-ModelPU");
         EntityManager em = emf.createEntityManager();
-        Produto obj = new Produto();
+        Filmes obj = new Filmes();
         obj.setNome("Mouse sem Fio Laser");
         obj.setDescricao("Mouse sem Fio Laser Garantia 2 Anos");
         obj.setEstoque(100.00);

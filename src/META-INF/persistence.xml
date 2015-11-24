@@ -7,9 +7,9 @@
     <class>br.edu.ifsul.modelo.Grupo</class>
     <class>br.edu.ifsul.modelo.Marca</class>
     <class>br.edu.ifsul.modelo.PessoaFisica</class>
-    <class>br.edu.ifsul.modelo.Produto</class>
     <class>br.edu.ifsul.modelo.Telefone</class>
     <class>br.edu.ifsul.modelo.Cliente</class>
+    <class>br.edu.ifsul.modelo.Filmes</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/ta2015-2-6n1"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>

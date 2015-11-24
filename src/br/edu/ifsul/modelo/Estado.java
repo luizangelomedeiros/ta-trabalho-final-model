@@ -19,14 +19,15 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Estado implements Serializable {
     @Id
     @Column(name = "id", nullable = false)
-    @SequenceGenerator(name = "seq_estado", sequenceName = "seq_estado_id",
-            allocationSize = 1)
+    @SequenceGenerator(name = "seq_estado", sequenceName = "seq_estado_id",allocationSize = 1)
     @GeneratedValue(generator = "seq_estado", strategy = GenerationType.SEQUENCE)
     private Integer id;
+    
     @NotEmpty(message = "O nome deve ser informado")
     @Length(max = 50, message = "O nome não pode ter mais de {max} caracteres")
     @Column(name = "nome", length = 50, nullable = false)
     private String nome;
+    
     @NotEmpty(message = "A UF deve ser informada")  
     @Length(min = 2,max = 2, message = "A UF deve ter {max} caracteres")
     @Column(name = "uf",length = 2, nullable = false)
