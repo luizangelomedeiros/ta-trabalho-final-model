@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="TA-2015-2-6N1-ModelPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>br.edu.ifsul.modelo.Cidade</class>
+    <class>br.edu.ifsul.modelo.Estado</class>
+    <class>br.edu.ifsul.modelo.Grupo</class>
+    <class>br.edu.ifsul.modelo.Marca</class>
+    <class>br.edu.ifsul.modelo.Pessoa</class>
+    <class>br.edu.ifsul.modelo.PessoaFisica</class>
+    <class>br.edu.ifsul.modelo.Produto</class>
+    <class>br.edu.ifsul.modelo.Telefone</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/ta2015-2-6n1"/>
+      <property name="javax.persistence.jdbc.user" value="postgres"/>
+      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="postgres"/>
+      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+      <property name="hibernate.connection.autocommit" value="false"/>
+    </properties>
+  </persistence-unit>
+</persistence>
