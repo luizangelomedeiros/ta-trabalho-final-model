@@ -49,7 +49,7 @@ public class Filmes implements Serializable {
     @Length(max = 20, message = "O numero de discos não pode ultrapassar {max} caracteres")
     @NotEmpty(message = "O numero de discos deve ser informado")
     @Column(name = "num_discos", length = 20, nullable = false)
-    private int num_discos;
+    private String num_discos;
     
     public Filmes() {
     }
@@ -94,15 +94,14 @@ public class Filmes implements Serializable {
         this.data_nascimento = data_nascimento;
     }
 
-    public int getNum_discos() {
+    public String getNum_discos() {
         return num_discos;
     }
 
-    public void setNum_discos(int num_discos) {
+    public void setNum_discos(String num_discos) {
         this.num_discos = num_discos;
     }
-
-    
+        
     @Override
     public int hashCode() {
         int hash = 7;
