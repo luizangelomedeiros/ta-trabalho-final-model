@@ -16,11 +16,8 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
-/**
- *
- * @author Jorge Luis Boeira Bavaresco
- * @email jorge.bavaresco@passofundo.ifsul.edu.br
- */
+
+
 @Entity
 @Table(name = "cidade")
 public class Cidade implements Serializable {
@@ -29,10 +26,12 @@ public class Cidade implements Serializable {
             allocationSize = 1)
     @GeneratedValue(generator = "seq_cidade", strategy = GenerationType.SEQUENCE)
     private Integer id;
+    
     @NotEmpty(message = "O nome deve ser informado")
     @Length(max = 50, message = "O nome deve ter no máximo {max} caracteres")
     @Column(name = "nome", length = 50, nullable = false)
     private String nome;
+    
     @NotNull(message = "O Estado deve ser informado")
     @ManyToOne
     @JoinColumn(name = "estado", referencedColumnName = "id", nullable = false)

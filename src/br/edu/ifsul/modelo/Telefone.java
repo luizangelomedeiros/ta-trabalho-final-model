@@ -40,7 +40,7 @@ public class Telefone implements Serializable {
     @NotNull(message = "A pessoa deve ser informada")
     @ManyToOne
     @JoinColumn(name = "pessoa_id", referencedColumnName = "id", nullable = false)
-    private Pessoa pessoa;
+    private Cliente pessoa;
 
     public Telefone() {
     }
@@ -69,11 +69,11 @@ public class Telefone implements Serializable {
         this.descricao = descricao;
     }
 
-    public Pessoa getPessoa() {
+    public Cliente getPessoa() {
         return pessoa;
     }
 
-    public void setPessoa(Pessoa pessoa) {
+    public void setPessoa(Cliente pessoa) {
         this.pessoa = pessoa;
     }
 

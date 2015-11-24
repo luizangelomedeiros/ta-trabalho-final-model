@@ -27,7 +27,7 @@ import org.hibernate.validator.constraints.br.CPF;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "pessoa_fisica")
-public class PessoaFisica extends Pessoa implements Serializable {
+public class PessoaFisica extends Cliente implements Serializable {
 
     @NotBlank(message = "O RG deve ser informado")
     @Length(max = 10, message = "O RG não deve possuir mais de {max} digitos")

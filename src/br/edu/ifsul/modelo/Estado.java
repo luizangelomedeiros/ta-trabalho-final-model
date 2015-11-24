@@ -13,11 +13,7 @@ import javax.persistence.Table;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
-/**
- *
- * @author Jorge Luis Boeira Bavaresco
- * @email jorge.bavaresco@passofundo.ifsul.edu.br
- */
+
 @Entity
 @Table(name = "estado")
 public class Estado implements Serializable {
