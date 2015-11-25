@@ -20,7 +20,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = "cliente")
+@Table(name = "usuario")
 public abstract class Usuario implements Serializable {
     @Id
     @SequenceGenerator(name = "seq_cliente", sequenceName = "seq_cliente_id",allocationSize = 1)
