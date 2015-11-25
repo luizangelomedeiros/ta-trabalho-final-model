@@ -3,7 +3,7 @@ package br.edu.ifsul.testes;
 import br.edu.ifsul.modelo.Cidade;
 import br.edu.ifsul.modelo.Estado;
 import br.edu.ifsul.modelo.PessoaFisica;
-import br.edu.ifsul.modelo.Filmes;
+import br.edu.ifsul.modelo.Filme;
 import java.util.Calendar;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -43,7 +43,7 @@ public class TesteInserirPessoaFisicaDesejo {
         boolean excecao = false;
         try {
             PessoaFisica pf = em.find(PessoaFisica.class, 1);
-            Filmes p = em.find(Filmes.class, 1);
+            Filme p = em.find(Filme.class, 1);
             pf.getDesejos().add(p);                    
             em.getTransaction().begin();
             em.persist(pf);

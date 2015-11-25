@@ -18,7 +18,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "filme")
-public class Filmes implements Serializable {
+public class Filme implements Serializable {
 
     @Id
     @Column(name = "id")
@@ -51,7 +51,7 @@ public class Filmes implements Serializable {
     @Column(name = "num_discos", length = 20, nullable = false)
     private String num_discos;
     
-    public Filmes() {
+    public Filme() {
     }
 
     public Integer getId() {
@@ -117,7 +117,7 @@ public class Filmes implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Filmes other = (Filmes) obj;
+        final Filme other = (Filme) obj;
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }
