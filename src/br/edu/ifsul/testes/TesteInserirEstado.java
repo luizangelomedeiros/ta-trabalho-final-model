@@ -9,26 +9,17 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 
-/**
- *
- * @author Jorge Luis Boeira Bavaresco
- * @email jorge.bavaresco@passofundo.ifsul.edu.br
- */
 public class TesteInserirEstado {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         EntityManagerFactory emf = null;
         EntityManager em = null;
         try {
-            emf = Persistence.createEntityManagerFactory("TA-2015-2-6N1-ModelPU");
+            emf = Persistence.createEntityManagerFactory("TA-FINAL-PU");
             em = emf.createEntityManager();
             Estado e = new Estado();
             e.setNome("Rio Grande do Sul");
             e.setUf("RS");
-            // criando o objeto para validar as anotações da bean validation API
             Validator validador = Validation.buildDefaultValidatorFactory().getValidator();
             Set<ConstraintViolation<Estado>> erros = validador.validate(e);
             if (erros.size() > 0) {
