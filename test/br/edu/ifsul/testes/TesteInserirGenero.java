@@ -1,7 +1,7 @@
 package br.edu.ifsul.testes;
 
-import br.edu.ifsul.modelo.Cidade;
 import br.edu.ifsul.modelo.Estado;
+import br.edu.ifsul.modelo.Genero;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -9,23 +9,18 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
-/**
- *
- * @author jorge
- */
-public class TesteInserirCidade {
+public class TesteInserirGenero {
 
     EntityManagerFactory emf;
     EntityManager em;
 
-    public TesteInserirCidade() {
+    public TesteInserirGenero() {
     }
 
     @Before
     public void setUp() {
-        emf = Persistence.createEntityManagerFactory("TA-2015-2-6N1-ModelPU");
+        emf = Persistence.createEntityManagerFactory("TA-FINAL-PU");
         em = emf.createEntityManager();
     }
 
@@ -39,12 +34,10 @@ public class TesteInserirCidade {
     public void teste(){
         boolean excecao = false;
         try {
-            Estado e = em.find(Estado.class, 5);
-            Cidade c = new Cidade();
-            c.setNome("Passo Fundo");
-            c.setEstado(e);
+            Genero e = new Genero();
+            e.setNome("AÇÃO");
             em.getTransaction().begin();
-            em.persist(c);
+            em.persist(e);
             em.getTransaction().commit();
         } catch (Exception e){
             excecao = true;

@@ -2,21 +2,15 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="TA-FINAL-PU" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
-    <class>br.edu.ifsul.modelo.Cidade</class>
-    <class>br.edu.ifsul.modelo.Cliente</class>
-    <class>br.edu.ifsul.modelo.Estado</class>
-    <class>br.edu.ifsul.modelo.Filme</class>
-    <class>br.edu.ifsul.modelo.Genero</class>
-    <class>br.edu.ifsul.modelo.Usuario</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/ta-final"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>
-      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/> 
+      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
       <property name="javax.persistence.jdbc.password" value="luiz1994"/>
       <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
       <property name="hibernate.hbm2ddl.auto" value="update"/>
       <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
-      <property name="hibernate.c" value=""/>
+      <property name="hibernate.connection.autocommit" value="false"/>
     </properties>
   </persistence-unit>
 </persistence>

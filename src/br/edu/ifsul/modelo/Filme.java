@@ -41,10 +41,10 @@ public class Filme implements Serializable {
     @Column(name = "duracao", length = 20, nullable = false)
     private String duracao;
        
-    @NotNull(message = "A data de Nascimento deve ser informada")
+    @NotNull(message = "A data de Lançamento deve ser informada")
     @Temporal(TemporalType.DATE)
-    @Column(name = "data_nascimento", nullable = false)
-    private Calendar data_nascimento;
+    @Column(name = "data_lancamento", nullable = false)
+    private Calendar data_lancamento;
     
     @Length(max = 20, message = "O numero de discos não pode ultrapassar {max} caracteres")
     @NotEmpty(message = "O numero de discos deve ser informado")
@@ -86,14 +86,15 @@ public class Filme implements Serializable {
         this.duracao = duracao;
     }
 
-    public Calendar getData_nascimento() {
-        return data_nascimento;
+    public Calendar getData_lancamento() {
+        return data_lancamento;
     }
 
-    public void setData_nascimento(Calendar data_nascimento) {
-        this.data_nascimento = data_nascimento;
+    public void setData_lancamento(Calendar data_lancamento) {
+        this.data_lancamento = data_lancamento;
     }
 
+    
     public String getNum_discos() {
         return num_discos;
     }

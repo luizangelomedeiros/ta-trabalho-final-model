@@ -1,33 +1,30 @@
 package br.edu.ifsul.testes;
-
-import br.edu.ifsul.modelo.Cidade;
-import br.edu.ifsul.modelo.Estado;
-import br.edu.ifsul.modelo.PessoaFisica;
+import br.edu.ifsul.modelo.Filme;
 import java.util.Calendar;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import org.junit.After;
 import org.junit.Assert;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
  * @author jorge
  */
-public class TesteInserirPessoaFisica {
+public class TesteInserirFilme {
 
     EntityManagerFactory emf;
     EntityManager em;
 
-    public TesteInserirPessoaFisica() {
+    public TesteInserirFilme() {
     }
 
     @Before
     public void setUp() {
-        emf = Persistence.createEntityManagerFactory("TA-2015-2-6N1-ModelPU");
+        emf = Persistence.createEntityManagerFactory("TA-FINAL-PU");
         em = emf.createEntityManager();
     }
 
@@ -41,17 +38,12 @@ public class TesteInserirPessoaFisica {
     public void teste(){
         boolean excecao = false;
         try {
-            PessoaFisica pf = new PessoaFisica();
-            pf.setBairro("Boqueirão");
-            pf.setCep("99834-987");
-            pf.setCidade(em.find(Cidade.class, 1));
-            pf.setComplemento("Ap 999");
-            pf.setCpf("774.784.645-21");
-            pf.setEmail("jorge.bavaresco@passofundo.ifsul.edu.br");
-            pf.setEndereco("rua tal");
-            pf.setNascimento(Calendar.getInstance());
-            pf.setNome("Jorge");
-            pf.setRg("8747563474");
+            Filme pf = new Filme();            
+            pf.setNome("Foi entao");            
+            pf.setIdioma("Ingles");
+            pf.setDuracao("10 min");
+            pf.setNum_discos("4");
+            pf.setData_lancamento(Calendar.getInstance());
             em.getTransaction().begin();
             em.persist(pf);
             em.getTransaction().commit();

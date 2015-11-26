@@ -1,10 +1,6 @@
 package br.edu.ifsul.testes;
 
-import br.edu.ifsul.modelo.Cidade;
 import br.edu.ifsul.modelo.Estado;
-import br.edu.ifsul.modelo.PessoaFisica;
-import br.edu.ifsul.modelo.Filme;
-import java.util.Calendar;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -14,21 +10,17 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author jorge
- */
-public class TesteInserirPessoaFisicaDesejo {
+public class TesteInserirEstado {
 
     EntityManagerFactory emf;
     EntityManager em;
 
-    public TesteInserirPessoaFisicaDesejo() {
+    public TesteInserirEstado() {
     }
 
     @Before
     public void setUp() {
-        emf = Persistence.createEntityManagerFactory("TA-2015-2-6N1-ModelPU");
+        emf = Persistence.createEntityManagerFactory("TA-FINAL-PU");
         em = emf.createEntityManager();
     }
 
@@ -42,11 +34,11 @@ public class TesteInserirPessoaFisicaDesejo {
     public void teste(){
         boolean excecao = false;
         try {
-            PessoaFisica pf = em.find(PessoaFisica.class, 1);
-            Filme p = em.find(Filme.class, 1);
-            pf.getDesejos().add(p);                    
+            Estado es = new Estado();
+            es.setNome("SANTA CATARINA");
+            es.setUf("SC");
             em.getTransaction().begin();
-            em.persist(pf);
+            em.persist(es);
             em.getTransaction().commit();
         } catch (Exception e){
             excecao = true;

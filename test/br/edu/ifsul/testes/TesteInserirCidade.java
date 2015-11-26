@@ -11,10 +11,6 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author jorge
- */
 public class TesteInserirCidade {
 
     EntityManagerFactory emf;
@@ -25,7 +21,7 @@ public class TesteInserirCidade {
 
     @Before
     public void setUp() {
-        emf = Persistence.createEntityManagerFactory("TA-2015-2-6N1-ModelPU");
+        emf = Persistence.createEntityManagerFactory("TA-FINAL-PU");
         em = emf.createEntityManager();
     }
 
@@ -39,7 +35,7 @@ public class TesteInserirCidade {
     public void teste(){
         boolean excecao = false;
         try {
-            Estado e = em.find(Estado.class, 5);
+            Estado e = em.find(Estado.class, 1);
             Cidade c = new Cidade();
             c.setNome("Passo Fundo");
             c.setEstado(e);

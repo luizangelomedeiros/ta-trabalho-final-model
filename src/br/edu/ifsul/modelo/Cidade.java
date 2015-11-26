@@ -22,8 +22,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Table(name = "cidade")
 public class Cidade implements Serializable {
     @Id
-    @SequenceGenerator(name = "seq_cidade", sequenceName = "seq_cidade_id",
-            allocationSize = 1)
+    @SequenceGenerator(name = "seq_cidade", sequenceName = "seq_cidade_id", allocationSize = 1)
     @GeneratedValue(generator = "seq_cidade", strategy = GenerationType.SEQUENCE)
     private Integer id;
     

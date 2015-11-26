@@ -17,13 +17,13 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-@Table(name = "filme")
+@Table(name = "genero")
 public class Genero implements Serializable {
 
     @Id
     @Column(name = "id")
-    @SequenceGenerator(name = "seq_id_filme", sequenceName = "gen_filme_id", allocationSize = 1)
-    @GeneratedValue(generator = "seq_id_filme", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "seq_id_genero", sequenceName = "gen_genero_id", allocationSize = 1)
+    @GeneratedValue(generator = "seq_id_genero", strategy = GenerationType.SEQUENCE)
     private Integer id;
     
     @Length(max = 50, message = "O nome não pode ultrapassar {max} caracteres")
