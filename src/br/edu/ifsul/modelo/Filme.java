@@ -64,14 +64,13 @@ public class Filme implements Serializable {
     
     public void adicionarGenero(Genero obj){
         obj.setFilme(this);
-        generos.add(obj);
+        this.generos.add(obj);
     }
     
     public void removerGenero(int index){
-        generos.remove(index);
+        this.generos.remove(index);
     }
     
-
     public Integer getId() {
         return id;
     }

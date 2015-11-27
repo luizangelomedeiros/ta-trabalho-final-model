@@ -18,8 +18,8 @@ public class TesteInserirEstado {
             emf = Persistence.createEntityManagerFactory("TA-FINAL-PU");
             em = emf.createEntityManager();
             Estado e = new Estado();
-            e.setNome("Rio Grande do Sul");
-            e.setUf("RS");
+            e.setNome("PARANÁ");
+            e.setUf("PR");
             Validator validador = Validation.buildDefaultValidatorFactory().getValidator();
             Set<ConstraintViolation<Estado>> erros = validador.validate(e);
             if (erros.size() > 0) {

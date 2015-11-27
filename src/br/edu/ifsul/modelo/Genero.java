@@ -39,7 +39,7 @@ public class Genero implements Serializable {
     private Calendar data;
     
     @ManyToOne
-    @JoinColumn(name = "filme_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "filme", referencedColumnName = "id", nullable = false)
     private Filme filme;
         
     public Genero() {
