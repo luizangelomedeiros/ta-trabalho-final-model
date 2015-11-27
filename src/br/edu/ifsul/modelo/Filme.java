@@ -61,6 +61,16 @@ public class Filme implements Serializable {
     
     public Filme() {
     }
+    
+    public void adicionarGenero(Genero obj){
+        obj.setFilme(this);
+        generos.add(obj);
+    }
+    
+    public void removerGenero(int index){
+        generos.remove(index);
+    }
+    
 
     public Integer getId() {
         return id;
