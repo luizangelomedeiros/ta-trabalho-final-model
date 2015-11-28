@@ -11,24 +11,21 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = "cliente")
-public abstract class Cliente implements Serializable {
+@Table(name = "pessoa")
+public abstract class Pessoa implements Serializable {
     @Id
-    @SequenceGenerator(name = "seq_cliente", sequenceName = "seq_cliente_id",allocationSize = 1)
-    @GeneratedValue(generator = "seq_cliente", strategy = GenerationType.SEQUENCE)   
+    @SequenceGenerator(name = "seq_pessoa", sequenceName = "seq_pessoa_id",allocationSize = 1)
+    @GeneratedValue(generator = "seq_pessoa", strategy = GenerationType.SEQUENCE)   
     private Integer id;
     
     @NotBlank(message = "O nome deve ser informado")
@@ -37,29 +34,28 @@ public abstract class Cliente implements Serializable {
     private String nome;    
     
     @NotBlank(message = "O CPF deve ser informado")
-    @Length(max = 50, message="O CPF não deve possuir mais de {max} caracteres")
-    @Column(name = "cpf",length = 20,nullable = false)  
+    @Length(max = 20, message="O CPF não deve possuir mais de {max} caracteres")
+    @Column(name = "cpf",length = 20,nullable = false, unique = true)
     private String cpf;
- 
-    @Email(message = "O email deve ser válido")
-    @NotBlank(message = "O email deve ser informado")
-    @Length(max = 50, message="O email não deve possuir mais de {max} caracteres")
-    @Column(name = "email",length = 50,nullable = false)    
-    private String endereco;
-    
+     
     @NotNull(message = "O nascimento deve ser informado")
     @Temporal(TemporalType.DATE)
-    @Column(name = "nascimento", nullable = false)
-    private Calendar nascimento;
-       
-    @NotNull(message = "A cidade deve ser informada")
-    @ManyToOne
-    @JoinColumn(name = "cidade",referencedColumnName = "id",nullable = false)
-    private Cidade cidade;
-
-    public Cliente() {
-    }
+    @Column(name = "data_nascimento", nullable = false)
+    private Calendar data_nascimento;
+ 
+    @NotBlank(message = "O Estado Civil deve ser informado")
+    @Length(max = 20, message="O Estado Civil não deve possuir mais de {max} caracteres")
+    @Column(name = "estado_civil",length = 20,nullable = false)  
+    private String estado_civil;
     
+    @NotBlank(message = "O Endereço deve ser informado")
+    @Length(max = 50, message="O Endereço não deve possuir mais de {max} caracteres")
+    @Column(name = "endereco",length = 50,nullable = false)  
+    private String endereco;
+    
+    public Pessoa() {
+    }
+
     public Integer getId() {
         return id;
     }
@@ -76,22 +72,6 @@ public abstract class Cliente implements Serializable {
         this.nome = nome;
     }
 
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-   
-    public Cidade getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(Cidade cidade) {
-        this.cidade = cidade;
-    }
-
     public String getCpf() {
         return cpf;
     }
@@ -100,14 +80,30 @@ public abstract class Cliente implements Serializable {
         this.cpf = cpf;
     }
 
-    public Calendar getNascimento() {
-        return nascimento;
+    public Calendar getData_nascimento() {
+        return data_nascimento;
     }
 
-    public void setNascimento(Calendar nascimento) {
-        this.nascimento = nascimento;
+    public void setData_nascimento(Calendar data_nascimento) {
+        this.data_nascimento = data_nascimento;
     }
-    
+
+    public String getEstado_civil() {
+        return estado_civil;
+    }
+
+    public void setEstado_civil(String estado_civil) {
+        this.estado_civil = estado_civil;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+        
     @Override
     public int hashCode() {
         int hash = 5;
@@ -123,7 +119,7 @@ public abstract class Cliente implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Cliente other = (Cliente) obj;
+        final Pessoa other = (Pessoa) obj;
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }

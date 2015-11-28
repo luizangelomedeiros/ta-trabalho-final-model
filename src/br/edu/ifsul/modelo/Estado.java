@@ -10,9 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
-
 
 @Entity
 @Table(name = "estado")

@@ -35,7 +35,7 @@ public class TesteInserirCidade {
     public void teste(){
         boolean excecao = false;
         try {
-            Estado e = em.find(Estado.class, 1);
+            Estado e = em.find(Estado.class, 3);
             Cidade c = new Cidade();
             c.setNome("Passo Fundo");
             c.setEstado(e);
