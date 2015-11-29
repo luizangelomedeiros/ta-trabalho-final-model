@@ -7,6 +7,8 @@
     <class>br.edu.ifsul.modelo.Filme</class>
     <class>br.edu.ifsul.modelo.Genero</class>
     <class>br.edu.ifsul.modelo.Cinema</class>
+    <class>br.edu.ifsul.modelo.Pessoa</class>
+    <class>br.edu.ifsul.modelo.Funcionario</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/ta-final"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>
