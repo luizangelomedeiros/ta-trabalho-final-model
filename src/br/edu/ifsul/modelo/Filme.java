@@ -57,18 +57,18 @@ public class Filme implements Serializable {
     private String num_discos;
     
     @OneToMany(mappedBy = "filme",cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.LAZY)    
-    private List<Genero> generos = new ArrayList<>();
+    private List<Sessao> sessoes = new ArrayList<>();
     
     public Filme() {
     }
     
-    public void adicionarGenero(Genero obj){
+    public void adicionarSessao(Sessao obj){
         obj.setFilme(this);
-        this.generos.add(obj);
+        this.sessoes.add(obj);
     }
     
-    public void removerGenero(int index){
-        this.generos.remove(index);
+    public void removerSessao(int index){
+        this.sessoes.remove(index);
     }
     
     public Integer getId() {
@@ -119,12 +119,12 @@ public class Filme implements Serializable {
         this.num_discos = num_discos;
     }
 
-    public List<Genero> getGeneros() {
-        return generos;
+    public List<Sessao> getSessoes() {
+        return sessoes;
     }
 
-    public void setGeneros(List<Genero> generos) {
-        this.generos = generos;
+    public void setSessoes(List<Sessao> sessoes) {
+        this.sessoes = sessoes;
     }
        
         

@@ -86,6 +86,5 @@ public class Funcionario extends Pessoa implements Serializable {
     public void setSalario(Double salario) {
         this.salario = salario;
     }
-
-        
+      
 }
