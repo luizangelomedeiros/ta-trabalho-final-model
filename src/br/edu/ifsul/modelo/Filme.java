@@ -12,6 +12,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -59,6 +62,14 @@ public class Filme implements Serializable {
     @OneToMany(mappedBy = "filme",cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.LAZY)    
     private List<Sessao> sessoes = new ArrayList<>();
     
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "genero_filme",
+            joinColumns = 
+            @JoinColumn(name = "filme", referencedColumnName = "id"), 
+            inverseJoinColumns = 
+            @JoinColumn(name = "genero", referencedColumnName = "id"))    
+    private List<Genero> filme_genero = new ArrayList<>();
+    
     public Filme() {
     }
     
@@ -70,7 +81,15 @@ public class Filme implements Serializable {
     public void removerSessao(int index){
         this.sessoes.remove(index);
     }
-    
+
+    public List<Genero> getFilme_genero() {
+        return filme_genero;
+    }
+
+    public void setFilme_genero(List<Genero> filme_genero) {
+        this.filme_genero = filme_genero;
+    }
+        
     public Integer getId() {
         return id;
     }
@@ -126,8 +145,9 @@ public class Filme implements Serializable {
     public void setSessoes(List<Sessao> sessoes) {
         this.sessoes = sessoes;
     }
-       
-        
+    
+    
+
     @Override
     public int hashCode() {
         int hash = 7;

@@ -1,6 +1,5 @@
 package br.edu.ifsul.testes;
 
-import br.edu.ifsul.modelo.Estado;
 import br.edu.ifsul.modelo.Genero;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
