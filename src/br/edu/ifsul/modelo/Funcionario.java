@@ -86,5 +86,33 @@ public class Funcionario extends Pessoa implements Serializable {
     public void setSalario(Double salario) {
         this.salario = salario;
     }
-      
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 37 * hash + Objects.hashCode(this.idcinema);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Funcionario other = (Funcionario) obj;
+        if (!Objects.equals(this.idcinema, other.idcinema)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Funcionario{" + "idcinema=" + idcinema + ", usuario=" + usuario + ", senha=" + senha + ", ativo=" + ativo + ", salario=" + salario + '}';
+    }
+    
+    
 }
