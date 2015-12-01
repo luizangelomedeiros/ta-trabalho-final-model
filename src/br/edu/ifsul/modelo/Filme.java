@@ -59,7 +59,7 @@ public class Filme implements Serializable {
     @Column(name = "num_discos", length = 20, nullable = false)
     private String num_discos;
     
-    @OneToMany(mappedBy = "filme",cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.LAZY)    
+    @OneToMany(mappedBy = "filme",cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)    
     private List<Sessao> sessoes = new ArrayList<>();
     
     @ManyToMany(fetch = FetchType.EAGER)
